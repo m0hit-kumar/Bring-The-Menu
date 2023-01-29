@@ -1,4 +1,5 @@
 import 'package:bring_the_menu/home_page.dart';
+import 'package:bring_the_menu/views/client/onBoard/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -24,11 +25,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'adminSignup',
+      initialRoute: 'menu',
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
         GetPage(name: '/clientOnBoard', page: () => ClientOnBoard()),
-        GetPage(name: '/adminSignup', page: () => const AdminSignUp())
+        GetPage(name: '/adminSignup', page: () => const AdminSignUp()),
+        GetPage(name: '/menu', page: () => const MyMenu())
       ],
     );
   }

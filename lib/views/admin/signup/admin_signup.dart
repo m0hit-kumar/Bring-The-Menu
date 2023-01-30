@@ -43,7 +43,8 @@ class _AdminSignUpState extends State<AdminSignUp> {
                 SizedBox(height: Get.height / 30),
                 Text(
                   'Go Digital',
-                  style: TextStyle(color: constants.whiteTextColor, fontSize: 24),
+                  style:
+                      TextStyle(color: constants.whiteTextColor, fontSize: 24),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: Get.height / 20),
@@ -61,14 +62,29 @@ class _AdminSignUpState extends State<AdminSignUp> {
                     controller: passwordController,
                     isObscrue: false),
                 SizedBox(height: Get.height / 20),
-                CustomButton(
-                    constants: constants,
-                    title: 'Sign Up',
-                    onTap: () {
-                      // To be implemented by Mohit Bhaiya.
-                    },
-                    width: Get.width / 3.2,
-                    height: Get.height / 20)
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: Get.width / 11),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomButton(
+                          constants: constants,
+                          title: 'Sign Up',
+                          onTap: () {
+                            // To be implemented by Mohit Bhaiya.
+                          },
+                          width: Get.width / 3.2,
+                          height: Get.height / 20),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Login',
+                          style: TextStyle(color: constants.whiteTextColor),
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),

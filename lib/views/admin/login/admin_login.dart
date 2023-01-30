@@ -1,22 +1,23 @@
 import 'package:bring_the_menu/constants.dart';
-import 'package:bring_the_menu/views/admin/login/admin_login.dart';
+import 'package:bring_the_menu/views/admin/signup/admin_signup.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
+import 'package:bring_the_menu/views/widgets/input_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:bring_the_menu/views/widgets/input_widget.dart';
 
-class AdminSignUp extends StatefulWidget {
-  const AdminSignUp({super.key});
+class AdminLogin extends StatefulWidget {
+  const AdminLogin({super.key});
 
   @override
-  State<AdminSignUp> createState() => _AdminSignUpState();
+  State<AdminLogin> createState() => _AdminLoginState();
 }
 
-class _AdminSignUpState extends State<AdminSignUp> {
+class _AdminLoginState extends State<AdminLogin> {
   final constants = Get.put(Constants());
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +44,7 @@ class _AdminSignUpState extends State<AdminSignUp> {
                 ),
                 SizedBox(height: Get.height / 30),
                 Text(
-                  'Go Digital',
+                  'Login Now',
                   style:
                       TextStyle(color: constants.whiteTextColor, fontSize: 24),
                   textAlign: TextAlign.center,
@@ -70,18 +71,18 @@ class _AdminSignUpState extends State<AdminSignUp> {
                     children: [
                       CustomButton(
                           constants: constants,
-                          title: 'Sign Up',
+                          title: 'Login',
                           onTap: () {
-                            // To be implemented by Mohit Bhaiya.
+                            // To be implemented by mohit bhaiya.
                           },
                           width: Get.width / 3.2,
                           height: Get.height / 20),
                       InkWell(
                         onTap: () {
-                          Get.to(const AdminLogin());
+                          Get.to(const AdminSignUp());
                         },
                         child: Text(
-                          'Login',
+                          'Sign Up',
                           style: TextStyle(color: constants.whiteTextColor),
                         ),
                       )

@@ -14,7 +14,7 @@ class ClientOnBoard extends StatelessWidget {
     return Scaffold(
       backgroundColor: constants.backgroundColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 7),
+        padding: const EdgeInsets.symmetric(horizontal: 7),
         child: Container(
           alignment: Alignment.center,
           child: Column(
@@ -39,7 +39,6 @@ class ClientOnBoard extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: Get.height / 3.1),
-      
               CustomButton(
                 constants: constants,
                 title: 'Continue',

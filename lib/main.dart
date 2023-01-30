@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:bring_the_menu/home_page.dart';
 import 'package:bring_the_menu/views/client/onBoard/menu_page.dart';
 import 'package:flutter/material.dart';
@@ -19,18 +21,39 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  //  String _documentId;
+  String documentId = "";
+  @override
+  void initState() {
+    super.initState();
+    _extractDocumentIdFromUrl();
+  }
+
+  void _extractDocumentIdFromUrl() {
+    final Uri uri = Uri.parse(window.location.href);
+    documentId = uri.path.toString();
+    print("$uri , $documentId");
+  }
+
   @override
   Widget build(BuildContext context) {
+    print(documentId);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'menu',
+      initialRoute: documentId,
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
         GetPage(name: '/clientOnBoard', page: () => ClientOnBoard()),
         GetPage(name: '/adminSignup', page: () => const AdminSignUp()),
-        GetPage(name: '/menu', page: () => const MyMenu())
+        GetPage(name: documentId, page: () => MyMenu(documentId: documentId))
       ],
     );
   }

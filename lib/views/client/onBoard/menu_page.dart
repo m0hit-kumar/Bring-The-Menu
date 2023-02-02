@@ -1,9 +1,9 @@
 import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/views/widgets/menu_card.dart';
-import 'package:bring_the_menu/views/widgets/stars.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:slidable_button/slidable_button.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class MyMenu extends StatefulWidget {
   const MyMenu({super.key, required this.documentId});
@@ -17,6 +17,7 @@ class _MyMenuState extends State<MyMenu> {
   final constants = Get.put(Constants());
   String docID = "";
 
+  AudioPlayer player = AudioPlayer();
   @override
   void initState() {
     super.initState();
@@ -25,16 +26,15 @@ class _MyMenuState extends State<MyMenu> {
     });
   }
 
-  void p() {
-    print("------------- ${widget.documentId}");
-  }
-
   int initialValue = 0;
   List<int> _quantities = [];
+
+  Map<String, int> order = <String, int>{};
 
   void addQuantity(int index, int quantity) {
     setState(() {
       _quantities[index] = quantity;
+      order.addEntries({"$index": quantity}.entries);
     });
   }
 
@@ -87,7 +87,8 @@ class _MyMenuState extends State<MyMenu> {
         body: GridView.count(
           crossAxisCount: 2,
           children: List.generate(100, (index) {
-            _quantities.add(0);
+            // _quantities.add(0);
+            // order["$index"] = 0;
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Center(
@@ -148,11 +149,14 @@ class _MyMenuState extends State<MyMenu> {
                     ),
                   ),
                   onChanged: (position) {
+                    // player.play(AssetSource('assets/sounds/swipe.mp3'));
                     setState(
                       () {
                         if (position == SlidableButtonPosition.end) {
                           print("sliding");
+                          // _play();
                           print("Quantities: $_quantities");
+                          print("Order : $order");
                         }
                       },
                     );

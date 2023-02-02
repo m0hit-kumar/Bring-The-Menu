@@ -40,6 +40,8 @@ class _MenuCardState extends State<MenuCard> {
     setState(() {
       _quantity++;
     });
+    print("vale $_quantity");
+
     widget.onQuantityChanged(widget.index, _quantity);
   }
 

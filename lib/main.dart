@@ -1,6 +1,9 @@
 import 'dart:html';
 
 import 'package:bring_the_menu/home_page.dart';
+import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
+import 'package:bring_the_menu/views/admin/login/admin_login.dart';
+import 'package:bring_the_menu/views/admin/otp/otp.dart';
 import 'package:bring_the_menu/views/client/onBoard/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -10,6 +13,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:bring_the_menu/views/admin/signup/admin_signup.dart';
 import 'package:bring_the_menu/views/client/onBoard/onboard.dart';
 import 'package:get/get.dart';
+import 'package:bring_the_menu/views/admin/complete-profile/complete-profile.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +64,13 @@ class _MyAppState extends State<MyApp> {
       getPages: [
         GetPage(name: '/clientOnBoard', page: () => ClientOnBoard()),
         GetPage(name: '/adminSignup', page: () => const AdminSignUp()),
-        GetPage(name: documentId, page: () => MyMenu(documentId: documentId))
+        GetPage(name: documentId, page: () => MyMenu(documentId: documentId)),
+        GetPage(
+            name: '/adminCompleteProfile',
+            page: () => const AdminCompleteProfile()),
+        GetPage(name: '/adminDashboard', page: () => const AdminDashboard()),
+        GetPage(name: '/adminLogin', page: () => const AdminLogin()),
+        GetPage(name: '/adminOTP', page: () => const AdminOTPScreen()),
       ],
     );
   }

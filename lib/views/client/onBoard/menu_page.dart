@@ -39,12 +39,27 @@ class _MyMenuState extends State<MyMenu> {
     });
   }
 
+  late String restruant;
   @override
   Widget build(BuildContext context) {
     CollectionReference menuRef = FirebaseFirestore.instance
         .collection('restaurants')
         .doc("SqNrahYI1KhQaVZXzkcN")
         .collection("menu");
+
+    Future<DocumentSnapshot<Map<String, dynamic>>> aboutRestaurant =
+        FirebaseFirestore.instance
+            .collection('restaurants')
+            .doc("SqNrahYI1KhQaVZXzkcN")
+            .get();
+
+    aboutRestaurant.asStream().listen((snap) {
+      if (snap.exists) {
+        Map<String, dynamic>? data = snap.data();
+        print(data!["name"]);
+        restruant = data["name"];
+      }
+    });
 
     return StreamBuilder<QuerySnapshot>(
         stream: menuRef.snapshots(),
@@ -71,7 +86,7 @@ class _MyMenuState extends State<MyMenu> {
                 ],
                 centerTitle: true,
                 title: Text(
-                  "hi $docID",
+                  restruant,
                   // "Bring The Menu",
                   style: const TextStyle(fontSize: 13),
                 ),

@@ -1,6 +1,9 @@
+import 'dart:collection';
+
 import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,9 +17,21 @@ class AdminCompleteProfile extends StatefulWidget {
 class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
   final constants = Get.put(Constants());
   TextEditingController restaurantNameController = TextEditingController();
+  Future<DocumentSnapshot<Map<String, dynamic>>> menuRef = FirebaseFirestore
+      .instance
+      .collection('restaurants')
+      .doc("SqNrahYI1KhQaVZXzkcN")
+      .get();
 
   @override
   Widget build(BuildContext context) {
+    menuRef.asStream().listen((snapshot) {
+      if (snapshot.exists) {
+        Map<String, dynamic>? data = snapshot.data();
+        print(data!["name"]);
+        // Use the data as needed
+      }
+    });
     return Scaffold(
       backgroundColor: constants.backgroundColor,
       body: SingleChildScrollView(

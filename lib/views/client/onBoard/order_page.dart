@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
 class OrderPage extends StatelessWidget {
-  OrderPage({super.key, required this.orders});
+  const OrderPage({super.key, required this.orders});
   final Map<String, int> orders;
 
   @override

@@ -24,7 +24,7 @@ class _AdminLoginState extends State<AdminLogin> {
       backgroundColor: constants.backgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 7),
+          padding: const EdgeInsets.symmetric(horizontal: 7),
           child: Container(
             alignment: Alignment.center,
             child: Column(

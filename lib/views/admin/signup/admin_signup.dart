@@ -1,5 +1,4 @@
 import 'package:bring_the_menu/constants.dart';
-import 'package:bring_the_menu/views/admin/login/admin_login.dart';
 import 'package:bring_the_menu/views/admin/otp/otp.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';

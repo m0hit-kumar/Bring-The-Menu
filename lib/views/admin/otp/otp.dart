@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bring_the_menu/constants.dart';
-import 'package:bring_the_menu/views/admin/complete-profile/complete-profile.dart';
+import 'package:bring_the_menu/views/admin/complete_profile/complete_profile.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'package:universal_html/html.dart' as html;
 
 import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
 import 'package:bring_the_menu/views/admin/login/admin_login.dart';
@@ -11,7 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:bring_the_menu/views/admin/signup/admin_signup.dart';
 import 'package:bring_the_menu/views/client/onBoard/onboard.dart';
 import 'package:get/get.dart';
-import 'package:bring_the_menu/views/admin/complete-profile/complete-profile.dart';
+import 'package:bring_the_menu/views/admin/complete_profile/complete_profile.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,8 +42,11 @@ class _MyAppState extends State<MyApp> {
 
   void _extractDocumentIdFromUrl() {
     final Uri uri = Uri.parse(window.location.href);
+
     documentId = uri.path.toString();
-    // print("$uri , $documentId");
+    var url = html.window.location;
+    print(uri.toString());
+    print("$uri , $documentId");
   }
 
   @override

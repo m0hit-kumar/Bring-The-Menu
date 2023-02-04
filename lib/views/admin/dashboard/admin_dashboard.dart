@@ -60,7 +60,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: Get.height / 30),
-            Container(
+            SizedBox(
               height: Get.height / 5.5,
               child: ListView(
                 scrollDirection: Axis.horizontal,

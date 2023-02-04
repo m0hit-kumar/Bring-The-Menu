@@ -4,8 +4,6 @@ import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
 import 'package:bring_the_menu/views/admin/login/admin_login.dart';
 import 'package:bring_the_menu/views/admin/otp/otp.dart';
 import 'package:bring_the_menu/views/client/onBoard/menu_page.dart';
-import 'package:bring_the_menu/views/client/onBoard/order_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -58,7 +56,7 @@ class _MyAppState extends State<MyApp> {
       // ),
 
       debugShowCheckedModeBanner: false,
-      initialRoute: '/menu',
+      initialRoute: '/adminSignup',
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
         GetPage(name: '/menu', page: () => MyMenu(documentId: documentId)),

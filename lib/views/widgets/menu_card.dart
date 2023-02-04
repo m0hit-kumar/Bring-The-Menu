@@ -10,7 +10,6 @@ class MenuCard extends StatefulWidget {
   final String orderedDishName;
   final bool isVeg;
   dynamic Function(String, int) onQuantityChanged;
-
   final int initQty;
 
   MenuCard({
@@ -24,6 +23,8 @@ class MenuCard extends StatefulWidget {
     required this.onQuantityChanged,
   });
   @override
+  // State<MenuCard> createState() => _MenuCardState();
+
   _MenuCardState createState() => _MenuCardState();
 }
 

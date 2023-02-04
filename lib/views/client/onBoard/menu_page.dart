@@ -1,4 +1,5 @@
 import 'package:bring_the_menu/constants.dart';
+import 'package:bring_the_menu/views/client/onBoard/order_page.dart';
 import 'package:bring_the_menu/views/utility_classes/menu_item.dart';
 import 'package:bring_the_menu/views/widgets/menu_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,11 +31,11 @@ class _MyMenuState extends State<MyMenu> {
 
   int initialValue = 0;
 
-  Map<String, int> order = <String, int>{};
+  Map<String, int> orders = <String, int>{};
 
   void addQuantity(String orderedDishName, int quantity) {
     setState(() {
-      order.addEntries({orderedDishName: quantity}.entries);
+      orders.addEntries({orderedDishName: quantity}.entries);
     });
   }
 
@@ -45,11 +46,6 @@ class _MyMenuState extends State<MyMenu> {
         .doc("SqNrahYI1KhQaVZXzkcN")
         .collection("menu");
 
-    // menuRef.get().then((QuerySnapshot snapshot) {
-    //   snapshot.docs.forEach((DocumentSnapshot document) {
-    //     print(document.data());
-    //   });
-    // });
     return StreamBuilder<QuerySnapshot>(
         stream: menuRef.snapshots(),
         builder: (context, snapshot) {
@@ -175,7 +171,13 @@ class _MyMenuState extends State<MyMenu> {
                               if (position == SlidableButtonPosition.end) {
                                 print("sliding");
                                 // _play();
-                                print("Order : $order");
+                                print("Order : $orders");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => OrderPage(
+                                              orders: orders,
+                                            )));
                               }
                             },
                           );

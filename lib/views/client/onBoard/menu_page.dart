@@ -172,12 +172,9 @@ class _MyMenuState extends State<MyMenu> {
                                 print("sliding");
                                 // _play();
                                 print("Order : $orders");
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => OrderPage(
-                                              orders: orders,
-                                            )));
+                                Get.to(OrderPage(
+                                  orders: orders,
+                                ));
                               }
                             },
                           );

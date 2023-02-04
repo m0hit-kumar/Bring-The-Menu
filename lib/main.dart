@@ -34,7 +34,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  //  String _documentId;
   String documentId = "";
   @override
   void initState() {
@@ -50,7 +49,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // print(documentId);
     return GetMaterialApp(
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),
@@ -60,7 +58,7 @@ class _MyAppState extends State<MyApp> {
       // ),
 
       debugShowCheckedModeBanner: false,
-      initialRoute: '/menu',
+      initialRoute: '/adminSignup',
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
         GetPage(name: '/menu', page: () => MyMenu(documentId: documentId)),

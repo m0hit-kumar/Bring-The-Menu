@@ -1,6 +1,8 @@
 import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/views/admin/login/admin_login.dart';
+import 'package:bring_the_menu/views/admin/otp/otp.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -17,8 +19,15 @@ class _AdminSignUpState extends State<AdminSignUp> {
   final constants = Get.put(Constants());
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  Future _createUser(String username, String password) async {
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: username, password: password);
+  }
+
   @override
   Widget build(BuildContext context) {
+    // return const Placeholder();
     return Scaffold(
       backgroundColor: constants.backgroundColor,
       body: SingleChildScrollView(
@@ -72,6 +81,7 @@ class _AdminSignUpState extends State<AdminSignUp> {
                           constants: constants,
                           title: 'Sign Up',
                           onTap: () {
+                            Get.to(const AdminOTPScreen());
                             // To be implemented by Mohit Bhaiya.
                           },
                           width: Get.width / 3.2,

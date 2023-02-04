@@ -7,20 +7,20 @@ class MenuCard extends StatefulWidget {
   final String dishName;
   final int rating;
   final int price;
-  final int index;
+  final String orderedDishName;
   final bool isVeg;
-  final Function(int, int) onQuantityChanged;
+  dynamic Function(String, int) onQuantityChanged;
 
   final int initQty;
 
-  const MenuCard({
+  MenuCard({
     super.key,
     required this.dishName,
     required this.rating,
     required this.price,
     required this.isVeg,
     required this.initQty,
-    required this.index,
+    required this.orderedDishName,
     required this.onQuantityChanged,
   });
   @override
@@ -40,16 +40,16 @@ class _MenuCardState extends State<MenuCard> {
     setState(() {
       _quantity++;
     });
-    print("vale $_quantity");
+    // print("vale $_quantity");
 
-    widget.onQuantityChanged(widget.index, _quantity);
+    widget.onQuantityChanged(widget.orderedDishName, _quantity);
   }
 
   void _decrementQuantity() {
     setState(() {
       _quantity--;
     });
-    widget.onQuantityChanged(widget.index, _quantity);
+    widget.onQuantityChanged(widget.orderedDishName, _quantity);
   }
 
   @override

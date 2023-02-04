@@ -1,6 +1,5 @@
 import 'dart:html';
 
-import 'package:bring_the_menu/home_page.dart';
 import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
 import 'package:bring_the_menu/views/admin/login/admin_login.dart';
 import 'package:bring_the_menu/views/admin/otp/otp.dart';
@@ -9,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:bring_the_menu/views/admin/signup/admin_signup.dart';
 import 'package:bring_the_menu/views/client/onBoard/onboard.dart';
 import 'package:get/get.dart';
@@ -45,26 +44,27 @@ class _MyAppState extends State<MyApp> {
   void _extractDocumentIdFromUrl() {
     final Uri uri = Uri.parse(window.location.href);
     documentId = uri.path.toString();
-    print("$uri , $documentId");
+    // print("$uri , $documentId");
   }
 
   @override
   Widget build(BuildContext context) {
-    print(documentId);
+    // print(documentId);
     return GetMaterialApp(
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          return const AdminSignUp();
-        },
-      ),
+      // home: StreamBuilder(
+      //   stream: FirebaseAuth.instance.authStateChanges(),
+      //   builder: (context, snapshot) {
+      //     return const AdminSignUp();
+      //   },
+      // ),
+
       debugShowCheckedModeBanner: false,
-      initialRoute: documentId,
+      initialRoute: '/menu',
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
+        GetPage(name: '/menu', page: () => MyMenu(documentId: documentId)),
         GetPage(name: '/clientOnBoard', page: () => ClientOnBoard()),
         GetPage(name: '/adminSignup', page: () => const AdminSignUp()),
-        GetPage(name: documentId, page: () => MyMenu(documentId: documentId)),
         GetPage(
             name: '/adminCompleteProfile',
             page: () => const AdminCompleteProfile()),

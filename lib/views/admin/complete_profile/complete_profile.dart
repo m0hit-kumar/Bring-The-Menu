@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';

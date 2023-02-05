@@ -27,6 +27,7 @@ class _MyMenuState extends State<MyMenu> {
     setState(() {
       docID = widget.documentId.substring(1);
     });
+    getRestruantInfo('SqNrahYI1KhQaVZXzkcN');
   }
 
   int initialValue = 0;
@@ -39,14 +40,8 @@ class _MyMenuState extends State<MyMenu> {
     });
   }
 
-  late String restruant;
-  @override
-  Widget build(BuildContext context) {
-    CollectionReference menuRef = FirebaseFirestore.instance
-        .collection('restaurants')
-        .doc("SqNrahYI1KhQaVZXzkcN")
-        .collection("menu");
-
+  String restruant = "";
+  void getRestruantInfo(String docId) {
     Future<DocumentSnapshot<Map<String, dynamic>>> aboutRestaurant =
         FirebaseFirestore.instance
             .collection('restaurants')
@@ -57,9 +52,35 @@ class _MyMenuState extends State<MyMenu> {
       if (snap.exists) {
         Map<String, dynamic>? data = snap.data();
         print(data!["name"]);
-        restruant = data["name"];
+        setState(() {
+          restruant = data["name"];
+        });
       }
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print(" width ${Get.width}");
+    print("height ${Get.mediaQuery.textScaleFactor}");
+    CollectionReference menuRef = FirebaseFirestore.instance
+        .collection('restaurants')
+        .doc("SqNrahYI1KhQaVZXzkcN")
+        .collection("menu");
+
+    // Future<DocumentSnapshot<Map<String, dynamic>>> aboutRestaurant =
+    //     FirebaseFirestore.instance
+    //         .collection('restaurants')
+    //         .doc("SqNrahYI1KhQaVZXzkcN")
+    //         .get();
+
+    // aboutRestaurant.asStream().listen((snap) {
+    //   if (snap.exists) {
+    //     Map<String, dynamic>? data = snap.data();
+    //     print(data!["name"]);
+    //     restruant = data["name"];
+    //   }
+    // });
 
     return StreamBuilder<QuerySnapshot>(
         stream: menuRef.snapshots(),
@@ -85,10 +106,10 @@ class _MyMenuState extends State<MyMenu> {
                       )),
                 ],
                 centerTitle: true,
-                title: Text(
-                  restruant,
-                  // "Bring The Menu",
-                  style: const TextStyle(fontSize: 13),
+                title: const Text(
+                  // restruant,
+                  "Bring The Menu",
+                  style: TextStyle(fontSize: 13),
                 ),
                 backgroundColor: Colors.transparent,
                 leading: TextButton(
@@ -102,7 +123,7 @@ class _MyMenuState extends State<MyMenu> {
                   child: Column(
                     children: [
                       Text(
-                        "The Restaurant",
+                        restruant,
                         style: TextStyle(
                             fontSize: 22,
                             color: constants.whiteTextColor,
@@ -123,13 +144,17 @@ class _MyMenuState extends State<MyMenu> {
                     padding: const EdgeInsets.all(8.0),
                     child: Center(
                       child: MenuCard(
-                          orderedDishName: menuItems[index].name,
-                          onQuantityChanged: addQuantity,
-                          rating: menuItems[index].rating.toInt(),
-                          dishName: menuItems[index].name,
-                          isVeg: menuItems[index].veg,
-                          price: menuItems[index].price,
-                          initQty: 0),
+                        orderedDishName: menuItems[index].name,
+                        onQuantityChanged: addQuantity,
+                        rating: menuItems[index].rating.toInt(),
+                        dishName: menuItems[index].name,
+                        isVeg: menuItems[index].veg,
+                        price: menuItems[index].price,
+                        initQty: 0,
+                        height: Get.height / 4.48,
+                        width: Get.width / 2.76,
+                        textScaleFactor: Get.mediaQuery.textScaleFactor,
+                      ),
                     ),
                   );
                 }),

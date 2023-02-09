@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
       // ),
 
       debugShowCheckedModeBanner: false,
-      initialRoute: '/adminSignup',
+      initialRoute: '/adminCompleteProfile',
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
         GetPage(name: '/menu', page: () => MyMenu(documentId: documentId)),

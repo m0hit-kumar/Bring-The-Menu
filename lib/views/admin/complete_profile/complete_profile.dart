@@ -15,6 +15,13 @@ class AdminCompleteProfile extends StatefulWidget {
 class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
   final constants = Get.put(Constants());
   TextEditingController restaurantNameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController websiteController = TextEditingController();
+  TextEditingController upiController = TextEditingController();
+
+  RxString openTime = 'Select Time'.obs;
+  RxString closeTime = 'Select Time'.obs;
+
   Future<DocumentSnapshot<Map<String, dynamic>>> menuRef = FirebaseFirestore
       .instance
       .collection('restaurants')
@@ -35,7 +42,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
-              left: Get.width / 20, right: Get.width / 20, top: Get.width / 15),
+              left: Get.width / 30, right: Get.width / 30, top: Get.width / 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,62 +75,186 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
 
               InputWidget(
                   constants: constants,
-                  title: 'Lorem Ipsum',
-                  hintText: 'eg: Lorem Ipsum Text.',
+                  title: 'Location',
+                  hintText: 'Fetching.....',
                   controller: restaurantNameController,
                   isObscrue: false),
 
               SizedBox(height: Get.height / 30),
 
-              // Map View
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: Get.width / 11),
-                child: SizedBox(
-                  child: Column(
+              // Phone & Website
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: Get.width / 1.95,
+                    child: InputWidget(
+                        constants: constants,
+                        title: 'Phone',
+                        hintText: 'eg: 8813900000',
+                        controller: phoneController,
+                        isObscrue: false),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Location',
-                            style: TextStyle(
-                                color: constants.whiteTextColor,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18),
-                          ),
-                        ],
+                      Text(
+                        'Website',
+                        style: TextStyle(
+                            color: constants.whiteTextColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18),
                       ),
                       SizedBox(height: Get.height / 60),
                       Container(
-                        width: double.infinity,
-                        height: Get.height / 3.5,
+                        width: Get.width / 3.05,
+                        height: Get.height / 17,
                         decoration: BoxDecoration(
                             color: constants.inputBackgroundColor,
                             borderRadius: BorderRadius.circular(10),
                             border:
                                 Border.all(color: constants.inputStrokeColor)),
-                        child: Center(
-                          child: Text(
-                            'Pick Location',
-                            style: TextStyle(
-                                color: constants.inputStrokeColor,
-                                fontSize: 18),
+                        child: TextFormField(
+                          controller: websiteController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'eg: www.google.com',
+                            hintStyle: TextStyle(
+                                color: constants.inputHintTextColor,
+                                fontSize: 15,
+                                fontWeight: FontWeight.normal),
+                            contentPadding: const EdgeInsets.all(14),
                           ),
                         ),
-                      ),
-                      SizedBox(height: Get.height / 30),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          CustomButton(
-                              constants: constants,
-                              title: 'Submit',
-                              onTap: () {},
-                              width: Get.width / 4,
-                              height: Get.height / 18),
-                        ],
                       )
                     ],
-                  ),
+                  )
+                ],
+              ),
+
+              // UPI
+              SizedBox(height: Get.height / 30),
+              InputWidget(
+                  constants: constants,
+                  title: 'UPI',
+                  hintText: 'eg: 8813@paytm',
+                  controller: upiController,
+                  isObscrue: false),
+
+              // Opening Closing
+              SizedBox(height: Get.height / 30),
+              Obx(() => Padding(
+                    padding: EdgeInsets.symmetric(horizontal: Get.width / 11),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Open Time',
+                              style: TextStyle(
+                                  color: constants.whiteTextColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18),
+                            ),
+                            SizedBox(height: Get.height / 60),
+                            InkWell(
+                              onTap: () async {
+                                final TimeOfDay? newTime = await showTimePicker(
+                                  context: context,
+                                  initialTime:
+                                      const TimeOfDay(hour: 12, minute: 00),
+                                );
+
+                                final time =
+                                    '${newTime!.hour} : ${newTime.minute}';
+                                openTime.value = time;
+                              },
+                              child: Container(
+                                width: Get.width / 3,
+                                height: Get.height / 17,
+                                decoration: BoxDecoration(
+                                    color: constants.inputBackgroundColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                        color: constants.inputStrokeColor)),
+                                child: Center(
+                                  child: Text(
+                                    openTime.toString(),
+                                    style: TextStyle(
+                                        color: constants.inputHintTextColor,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Close Time',
+                              style: TextStyle(
+                                  color: constants.whiteTextColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18),
+                            ),
+                            SizedBox(height: Get.height / 60),
+                            InkWell(
+                              onTap: () async {
+                                final TimeOfDay? newTime = await showTimePicker(
+                                  context: context,
+                                  initialTime:
+                                      const TimeOfDay(hour: 12, minute: 00),
+                                );
+
+                                final time =
+                                    '${newTime!.hour} : ${newTime.minute}';
+                                closeTime.value = time;
+                              },
+                              child: Container(
+                                width: Get.width / 3,
+                                height: Get.height / 17,
+                                decoration: BoxDecoration(
+                                    color: constants.inputBackgroundColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                        color: constants.inputStrokeColor)),
+                                child: Center(
+                                  child: Text(
+                                    closeTime.toString(),
+                                    style: TextStyle(
+                                        color: constants.inputHintTextColor,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  )),
+
+              SizedBox(height: Get.height / 30),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: Get.width / 11),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    CustomButton(
+                        constants: constants,
+                        title: 'Submit',
+                        onTap: () {},
+                        width: Get.width / 4,
+                        height: Get.height / 18),
+                  ],
                 ),
               )
             ],

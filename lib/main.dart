@@ -1,5 +1,9 @@
 import 'dart:html';
+ 
 import 'package:bring_the_menu/views/admin/generate_qr/generate_qr.dart';
+ 
+import 'package:bring_the_menu/views/admin/dashboard/about_page.dart';
+ 
 import 'package:universal_html/html.dart' as html;
 
 import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
@@ -71,7 +75,11 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/adminDashboard', page: () => const AdminDashboard()),
         GetPage(name: '/adminLogin', page: () => const AdminLogin()),
         GetPage(name: '/adminOTP', page: () => const AdminOTPScreen()),
+ 
         GetPage(name: '/adminGenerateQRCodes', page: () => const GenerateQRCodes())
+ 
+        GetPage(name: '/aboutPage', page: () => const AboutPage()),
+ 
       ],
     );
   }

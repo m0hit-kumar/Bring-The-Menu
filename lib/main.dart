@@ -76,7 +76,7 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/adminLogin', page: () => const AdminLogin()),
         GetPage(name: '/adminOTP', page: () => const AdminOTPScreen()),
  
-        GetPage(name: '/adminGenerateQRCodes', page: () => const GenerateQRCodes())
+        GetPage(name: '/adminGenerateQRCodes', page: () => const GenerateQRCodes()),
  
         GetPage(name: '/aboutPage', page: () => const AboutPage()),
  

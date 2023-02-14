@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "604846926162",
+    "project_id": "bring-the-menu",
+    "storage_bucket": "bring-the-menu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604846926162:android:872d658eca608ea796b28b",
+        "android_client_info": {
+          "package_name": "com.example.bringTheMenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604846926162-so88lf94c2n75tjlq90lhtq1eob2vgb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWXk6Nnud8dNiXJjNaYVdIr9yjWjeL5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604846926162-so88lf94c2n75tjlq90lhtq1eob2vgb6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "604846926162-n95tnn37172m89c3ff3fe3n2ftrh1h91.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bringTheMenu"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604846926162:android:dde2932d81b7ee2b96b28b",
+        "android_client_info": {
+          "package_name": "com.example.bring_the_menu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604846926162-so88lf94c2n75tjlq90lhtq1eob2vgb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWXk6Nnud8dNiXJjNaYVdIr9yjWjeL5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604846926162-so88lf94c2n75tjlq90lhtq1eob2vgb6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "604846926162-n95tnn37172m89c3ff3fe3n2ftrh1h91.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bringTheMenu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,10 @@
 import 'package:bring_the_menu/constants.dart';
+import 'package:bring_the_menu/controller/auth_controller.dart';
 import 'package:bring_the_menu/views/admin/otp/otp.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
 
@@ -19,34 +19,9 @@ class _AdminSignUpState extends State<AdminSignUp> {
   final constants = Get.put(Constants());
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final authManager = Get.put(AuthManager());
 
   var errorCode;
-
-  Future _createUser(String username, String password) async {
-    try {
-      FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: username, password: password)
-          .then((value) {
-        Fluttertoast.showToast(
-            msg: "Signed In",
-            toastLength: Toast.LENGTH_SHORT,
-            gravity: ToastGravity.CENTER,
-            timeInSecForIosWeb: 1,
-            backgroundColor: Colors.red,
-            textColor: Colors.white,
-            fontSize: 16.0);
-      });
-    } on FirebaseAuthException catch (error) {
-      Fluttertoast.showToast(
-          msg: error.message.toString(),
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
-          fontSize: 16.0);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +96,8 @@ class _AdminSignUpState extends State<AdminSignUp> {
                                         final password =
                                             passwordController.text.trim();
 
-                                        _createUser(username, password);
+                                        authManager.createUser(
+                                            username, password);
                                       },
                                       width: Get.width / 3.2,
                                       height: Get.height / 20),
@@ -131,10 +107,7 @@ class _AdminSignUpState extends State<AdminSignUp> {
                                           emailController.text.trim();
                                       final password =
                                           passwordController.text.trim();
-                                      FirebaseAuth.instance
-                                          .signInWithEmailAndPassword(
-                                              password: password,
-                                              email: username);
+                                      authManager.login(username, password);
                                     },
                                     child: Text(
                                       'Login',

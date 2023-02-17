@@ -57,23 +57,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // home: StreamBuilder(
-      //   stream: FirebaseAuth.instance.authStateChanges(),
-      //   builder: (context, snapshot) {
-      //     return const AdminSignUp();
-      //   },
-      // ),
-
       debugShowCheckedModeBanner: false,
-      initialRoute: '/adminGenerateQRCodes',
+      initialRoute: '/adminSignup',
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
-        GetPage(name: '/menu', page: () => MyMenu(documentId: documentId)),
-        GetPage(name: '/clientOnBoard', page: () => ClientOnBoard()),
         GetPage(name: '/adminSignup', page: () => const AdminSignUp()),
         GetPage(
             name: '/adminCompleteProfile',
             page: () => const AdminCompleteProfile()),
+        GetPage(name: '/menu', page: () => MyMenu(documentId: documentId)),
+        GetPage(name: '/clientOnBoard', page: () => ClientOnBoard()),
         GetPage(name: '/adminDashboard', page: () => const AdminDashboard()),
         GetPage(name: '/adminLogin', page: () => const AdminLogin()),
         GetPage(name: '/adminOTP', page: () => const AdminOTPScreen()),

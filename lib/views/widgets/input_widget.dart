@@ -9,6 +9,7 @@ class InputWidget extends StatelessWidget {
       required this.title,
       required this.hintText,
       required this.controller,
+      this.textInputType,
       required this.isObscrue})
       : super(key: key);
 
@@ -17,6 +18,7 @@ class InputWidget extends StatelessWidget {
   String hintText;
   TextEditingController controller;
   bool isObscrue;
+  TextInputType? textInputType;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +48,7 @@ class InputWidget extends StatelessWidget {
                   border: Border.all(color: constants.inputStrokeColor)),
               child: TextFormField(
                 controller: controller,
+                keyboardType: textInputType ?? TextInputType.text,
                 obscureText: isObscrue,
                 decoration: InputDecoration(
                   border: InputBorder.none,

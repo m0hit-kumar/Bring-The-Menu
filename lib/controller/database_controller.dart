@@ -1,5 +1,7 @@
+import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DatabaseController extends GetxController {
@@ -39,7 +41,7 @@ class DatabaseController extends GetxController {
         // ignore: avoid_print
         {
       print("000000000000 Profile Created");
-      Get.toNamed("/adminDashboard");
+      Get.off(const AdminDashboard());
     }).catchError(
         // ignore: avoid_print, invalid_return_type_for_catch_error
         (error) {

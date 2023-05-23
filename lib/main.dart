@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:bring_the_menu/views/admin/generate_qr/generate_qr.dart';
 
 import 'package:bring_the_menu/views/admin/dashboard/about_page.dart';
@@ -46,7 +44,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _extractDocumentIdFromUrl() {
-    final Uri uri = Uri.parse(window.location.href);
+    final Uri uri = Uri.parse(html.window.location.href);
 
     documentId = uri.path.toString();
     var url = html.window.location;

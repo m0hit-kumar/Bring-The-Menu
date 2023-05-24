@@ -78,7 +78,8 @@ class _AdminSignUpState extends State<AdminSignUp> {
                                 title: 'Password',
                                 hintText: 'eg: aStrongPassword#@',
                                 controller: passwordController,
-                                isObscrue: false),
+                                keyboardType: TextInputType.visiblePassword,
+                                isObscrue: true),
                             SizedBox(height: Get.height / 20),
                             Padding(
                               padding: EdgeInsets.symmetric(

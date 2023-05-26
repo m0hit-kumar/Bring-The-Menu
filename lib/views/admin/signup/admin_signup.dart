@@ -39,7 +39,7 @@ class _AdminSignUpState extends State<AdminSignUp> {
                   backgroundColor: constants.backgroundColor,
                   body: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 7),
+                      padding: const EdgeInsets.symmetric(horizontal: 7,vertical: 5),
                       child: Container(
                         alignment: Alignment.center,
                         child: Column(
@@ -109,11 +109,23 @@ class _AdminSignUpState extends State<AdminSignUp> {
                                           passwordController.text.trim();
                                       authManager.login(username, password);
                                     },
-                                    child: Text(
-                                      'Login',
-                                      style: TextStyle(
-                                          color: constants.whiteTextColor),
+                                    child:  Container(
+                                      width: Get.width / 3.2,
+                                       height: Get.height / 20,
+                                       decoration: BoxDecoration(
+                                       color: constants.themeColor,
+                                       borderRadius: BorderRadius.circular(8),
+                                        ),
+                                    
+                                    child: Center(
+                                      child: Text(
+                                        'Login',
+                                        style: TextStyle(
+                                            color: constants.whiteTextColor,
+                                            fontWeight: FontWeight.bold,),
+                                      ),
                                     ),
+                                  ),
                                   )
                                 ],
                               ),

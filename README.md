@@ -1,9 +1,33 @@
-# Bring_The_Menu
+# Bring_The_Menu 🍽️
+---
 
-Bring the menu is an innovative project where We're all about making the dining experience a breeze for both restaurants and customers. Imagine this: you walk into a restaurant, scan a code at your table, and boom! The entire menu is at your fingertips. No more waiting for servers or flipping through bulky menus.
+### Please support the project by giving     it a Star ⭐️
+
+Bring the menu is an innovative project where We're all about making the dining experience a breeze for both restaurants and customers. 
+
+<!-- Imagine this: you walk into a restaurant, scan a code at your table, and boom! The entire menu is at your fingertips. No more waiting for servers or flipping through bulky menus.
 <br>
 
-With Bring the Menu, you can effortlessly browse dishes, place orders, and even settle your bill, all from the convenience of your smartphone. So whether you're a restaurant owner aiming for smoother operations or a foodie seeking a hassle-free dining adventure, come join us on this exciting journey as we revolutionize the way we dine out.
+With Bring the Menu, you can effortlessly browse dishes, place orders, and even settle your bill, all from the convenience of your smartphone. So whether you're a restaurant owner aiming for smoother operations or a foodie seeking a hassle-free dining adventure, come join us on this exciting journey as we revolutionize the way we dine out. -->
+
+## Features
+---
+
+**📲 Scan and Go**
+
+- Easily scan a code at your table to access the digital menu instantly.
+
+**🔎 Seamless Menu Browsing**
+
+- Effortlessly explore a comprehensive menu with vibrant images and detailed descriptions.
+  
+**🍕 Quick Order**
+
+- Place your food and beverage orders directly from the app, without having to wait for a Waiter.   
+
+**💸 Secure Payments**
+
+- Enjoy secure and hassle-free payment options directly from the app.
 
 
 
@@ -17,7 +41,9 @@ With Bring the Menu, you can effortlessly browse dishes, place orders, and even 
 
 
 
- Glimise of the UI [Old UI]
+
+### Glimise of the Old UI (New UI in Process 👨‍💻)
+---
 
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/001119ca-3a54-4702-af96-7a9a15f54883" alt="Scan QR" width="200">
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/3b849fba-4b5b-4039-9e6a-bc627c45de8d" alt="On-Boarding" width="200">

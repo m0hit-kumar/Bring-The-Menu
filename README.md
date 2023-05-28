@@ -1,14 +1,17 @@
 # Bring_The_Menu 🍽️
 
 
-### Please support the project by giving     it a Star ⭐️
+### Please support the project by giving it a Star ⭐️
 
 Bring the menu is an innovative project where We're all about making the dining experience a breeze for both restaurants and customers. 
 
-<!-- Imagine this: you walk into a restaurant, scan a code at your table, and boom! The entire menu is at your fingertips. No more waiting for servers or flipping through bulky menus.
-<br>
+### Project Description 
+---
+Imagine this: you walk into a restaurant, scan a code at your table, and boom! The entire menu is at your fingertips. No more waiting for servers or flipping through bulky menus. With Bring the Menu, you can effortlessly browse dishes, place orders, and even settle your bill, all from the convenience of your smartphone.<br>
+So whether you're a restaurant owner aiming for smoother operations or a foodie seeking a hassle-free dining adventure, come join us on this exciting journey as we revolutionize the way we dine out. 
 
-With Bring the Menu, you can effortlessly browse dishes, place orders, and even settle your bill, all from the convenience of your smartphone. So whether you're a restaurant owner aiming for smoother operations or a foodie seeking a hassle-free dining adventure, come join us on this exciting journey as we revolutionize the way we dine out. -->
+--- 
+
 
 ## Features
 
@@ -29,13 +32,11 @@ With Bring the Menu, you can effortlessly browse dishes, place orders, and even 
 
 - Enjoy secure and hassle-free payment options directly from the app.
 
+## Provide Feedback, Report Bugs & Request New Features
 
+Just click on the [Issue tab](https://github.com/m0hit-kumar/Bring-The-Menu/issues) to raise a new issue in this repo.
 
-
-
-
-
-
+## Contribute to Bring_The_Menu
 
 
 

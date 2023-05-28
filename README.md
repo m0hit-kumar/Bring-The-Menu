@@ -38,8 +38,14 @@ Just click on the [Issue tab](https://github.com/m0hit-kumar/Bring-The-Menu/issu
 
 ## Contribute to Bring_The_Menu
 
+You can contribute to Bring the Menu in any or all of the following ways: 
 
-
+- [Ask a question](https://github.com/m0hit-kumar/Bring-The-Menu/discussions)
+- [Submit a bug report](https://github.com/m0hit-kumar/Bring-The-Menu/issues/new/choose)
+- [Suggest ways to improve the developer experience of an existing feature](https://github.com/m0hit-kumar/Bring-The-Menu/issues/new/choose)
+- [Request a new feature](https://github.com/m0hit-kumar/Bring-The-Menu/issues/new/choose)
+- Add documentation
+- To add a new feature, resolve an existing issue or add a new test to the project, check out our [Contribution Guidelines]("Add contibuting.md filename here").  
 
 
 

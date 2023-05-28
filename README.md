@@ -42,25 +42,8 @@ With Bring the Menu, you can effortlessly browse dishes, place orders, and even 
 
 
 
-## Glimise of the Old UI (New UI in Process 👨‍💻)
+## Glimpse of the Old UI (New UI in Process 👨‍💻)
 
-
-
-
-<!-- 
-
-
-
-
-
-
-<img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/dcab7115-e091-4b38-ba9e-a47433014745" alt="OTP Screen" width="200">
-<img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/e44845a4-1a7c-477e-8e38-2b510421550e" alt="QR Generator" width="200">
-<img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/709877c6-2c94-4447-9b9f-dfe436410f96" alt="Restaurant Profile Complete Original" width="200">
-<img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4e347a0f-63a0-427c-9413-063e8b47e347" alt="Restaurant Profile Complete" width="200">
- <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/f6d7b763-33bb-489e-a8f9-001016bdfa40" alt="Review Page-1" width="200">
-<img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/bce2f94c-a2a3-4aff-9970-99ac333b4d15" alt="Review" width="200">
- -->
 
 | Scan QR | On-Boarding | Restaurant Register |
 | ------- | ----------- | ------------------ |
@@ -77,9 +60,13 @@ With Bring the Menu, you can effortlessly browse dishes, place orders, and even 
 
 | Email verification | iPhone 14 Plus - 2 | Order |
 | ------------------ | ------------------ | ----- |
-| ![Email verification](https://github.com/m0hit-kumar/Bring-The-Menu/raw/main/assets/60257288/4cc75296-cf8f-4b22-9360-fd891ffd12a5) | ![iPhone 14 Plus - 2](https://github.com/m0hit-kumar/Bring-The-Menu/raw/main/assets/60257288/40e191ee-b76d-4392-8bb9-533a04ecb0a7) | ![Order](https://github.com/m0hit-kumar/Bring-The-Menu/raw/main/assets/60257288/a8d58fd7-af7d-4dd6-861d-a532a2f63ed1) |
+| ![Email verification](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4cc75296-cf8f-4b22-9360-fd891ffd12a5) | ![iPhone 14 Plus - 2](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/40e191ee-b76d-4392-8bb9-533a04ecb0a7) | ![Order](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/a8d58fd7-af7d-4dd6-861d-a532a2f63ed1) |
 
+| OTP Screen | QR Generator | Restaurant Profile Complete Original |
+| ---------- | ------------ | ----------------------------------- |
+| ![OTP Screen](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/dcab7115-e091-4b38-ba9e-a47433014745) | ![QR Generator](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/e44845a4-1a7c-477e-8e38-2b510421550e) | ![Restaurant Profile Complete Original](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/709877c6-2c94-4447-9b9f-dfe436410f96) |
 
-<!-- <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4cc75296-cf8f-4b22-9360-fd891ffd12a5" alt="Email verification" width="200"> 
- <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/40e191ee-b76d-4392-8bb9-533a04ecb0a7" alt="iPhone 14 Plus - 2" width="200">
-<img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/a8d58fd7-af7d-4dd6-861d-a532a2f63ed1" alt="Order" width="200"> -->
+| Restaurant Profile Complete | Review Page-1 | Review |
+| --------------------------- | ------------- | ------ |
+| ![Restaurant Profile Complete](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4e347a0f-63a0-427c-9413-063e8b47e347) | ![Review Page-1](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/f6d7b763-33bb-489e-a8f9-001016bdfa40) | ![Review](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/bce2f94c-a2a3-4aff-9970-99ac333b4d15) |
+

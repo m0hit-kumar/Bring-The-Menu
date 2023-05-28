@@ -1,5 +1,5 @@
 # Bring_The_Menu 🍽️
----
+
 
 ### Please support the project by giving     it a Star ⭐️
 
@@ -11,7 +11,7 @@ Bring the menu is an innovative project where We're all about making the dining 
 With Bring the Menu, you can effortlessly browse dishes, place orders, and even settle your bill, all from the convenience of your smartphone. So whether you're a restaurant owner aiming for smoother operations or a foodie seeking a hassle-free dining adventure, come join us on this exciting journey as we revolutionize the way we dine out. -->
 
 ## Features
----
+
 
 **📲 Scan and Go**
 
@@ -42,8 +42,8 @@ With Bring the Menu, you can effortlessly browse dishes, place orders, and even 
 
 
 
-### Glimise of the Old UI (New UI in Process 👨‍💻)
----
+## Glimise of the Old UI (New UI in Process 👨‍💻)
+
 
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/001119ca-3a54-4702-af96-7a9a15f54883" alt="Scan QR" width="200">
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/3b849fba-4b5b-4039-9e6a-bc627c45de8d" alt="On-Boarding" width="200">

@@ -45,10 +45,22 @@ With Bring the Menu, you can effortlessly browse dishes, place orders, and even 
 ## Glimise of the Old UI (New UI in Process 👨‍💻)
 
 
+
+
+<!-- 
+<div style="display: flex; justify-content: space-between;">
+    <img src="path/to/image1.png" alt="Image 1" style="width: 30%;">
+    <img src="path/to/image2.png" alt="Image 2" style="width: 30%;">
+    <img src="path/to/image3.png" alt="Image 3" style="width: 30%;">\
+    <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/001119ca-3a54-4702-af96-7a9a15f54883" alt="Scan QR" style="width: 30%;>
+    <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/3b849fba-4b5b-4039-9e6a-bc627c45de8d" alt="On-Boarding" style="width: 30%;>
+    <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/5b2cd1ee-1b0f-416d-a374-b4772cc49536" alt="Restaurant Register" style="width: 30%;>
+</div>
+
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/001119ca-3a54-4702-af96-7a9a15f54883" alt="Scan QR" width="200">
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/3b849fba-4b5b-4039-9e6a-bc627c45de8d" alt="On-Boarding" width="200">
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/5b2cd1ee-1b0f-416d-a374-b4772cc49536" alt="Restaurant Register" width="200">
-
+<br>
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/b3b6397f-7eaf-4b75-a87b-9ed77e42167e" alt="Restaurant On Boarding" width="200">
 
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/7e4e5a82-34f7-4ef7-93cd-c4ebe6a9d103" alt="About page" width="200">
@@ -65,4 +77,8 @@ With Bring the Menu, you can effortlessly browse dishes, place orders, and even 
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4e347a0f-63a0-427c-9413-063e8b47e347" alt="Restaurant Profile Complete" width="200">
  <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/f6d7b763-33bb-489e-a8f9-001016bdfa40" alt="Review Page-1" width="200">
 <img src="https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/bce2f94c-a2a3-4aff-9970-99ac333b4d15" alt="Review" width="200">
+ -->
 
+| Scan QR | On-Boarding | Restaurant Register |
+| ------- | ----------- | ------------------ |
+| ![Scan QR](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/001119ca-3a54-4702-af96-7a9a15f54883) | ![On-Boarding](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/3b849fba-4b5b-4039-9e6a-bc627c45de8d) | ![Restaurant Register](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/5b2cd1ee-1b0f-416d-a374-b4772cc49536) |

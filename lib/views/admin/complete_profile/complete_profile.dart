@@ -15,9 +15,12 @@ class AdminCompleteProfile extends StatefulWidget {
 }
 
 class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
+  final DatabaseController _dbController = Get.find();
+
   final constants = Get.put(Constants());
   final db = Get.put(DatabaseController());
   TextEditingController restaurantNameController = TextEditingController();
+  TextEditingController locationController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController websiteController = TextEditingController();
   TextEditingController upiController = TextEditingController();
@@ -30,6 +33,33 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
       .collection('restaurants')
       .doc("SqNrahYI1KhQaVZXzkcN")
       .get();
+
+  @override
+  void initState() {
+    super.initState();
+
+    fetchRestaurantData();
+  }
+
+  Future<void> fetchRestaurantData() async {
+    final user = _dbController.auth.currentUser?.uid;
+    final snapshot = await FirebaseFirestore.instance
+        .collection('restaurants')
+        .doc(user)
+        .get();
+
+    if (snapshot.exists) {
+      final data = snapshot.data() as Map<String, dynamic>;
+
+      restaurantNameController.text = data['name'] ?? '';
+        // locationController.text = data['location'] ?? '';
+      phoneController.text = data['contact'] ?? '';
+      websiteController.text = data['website'] ?? '';
+       upiController.text = data['upi'] ?? '';
+      openTime.value = data['timming']['openTime'] ?? 'Select Time';
+      closeTime.value = data['timming']['closeTime'] ?? 'Select Time';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +108,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                     constants: constants,
                     title: 'Location',
                     hintText: 'Fetching.....',
-                    controller: restaurantNameController,
+                    controller: locationController,
                     isObscrue: false),
 
                 SizedBox(height: Get.height / 30),

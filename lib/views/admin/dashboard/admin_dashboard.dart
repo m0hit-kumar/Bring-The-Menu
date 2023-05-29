@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../complete_profile/complete_profile.dart';
+
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
 
@@ -32,7 +34,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
             )),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminCompleteProfile()));
+              },
               icon: Icon(
                 Icons.edit,
                 color: constants.whiteTextColor,

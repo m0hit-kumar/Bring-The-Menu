@@ -1,23 +1,20 @@
- 
-
-import 'package:bring_the_menu/views/admin/generate_qr/generate_qr.dart';
-
-import 'package:bring_the_menu/views/admin/dashboard/about_page.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:universal_html/html.dart' as html;
 
+import 'package:bring_the_menu/views/admin/complete_profile/complete_profile.dart';
+import 'package:bring_the_menu/views/admin/dashboard/about_page.dart';
 import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
+import 'package:bring_the_menu/views/admin/generate_qr/generate_qr.dart';
 import 'package:bring_the_menu/views/admin/login/admin_login.dart';
 import 'package:bring_the_menu/views/admin/otp/otp.dart';
-import 'package:bring_the_menu/views/client/onBoard/menu_page.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'package:flutter/services.dart';
 import 'package:bring_the_menu/views/admin/signup/admin_signup.dart';
+import 'package:bring_the_menu/views/client/onBoard/menu_page.dart';
 import 'package:bring_the_menu/views/client/onBoard/onboard.dart';
-import 'package:get/get.dart';
-import 'package:bring_the_menu/views/admin/complete_profile/complete_profile.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +57,9 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/adminSignup',
-      theme: ThemeData(fontFamily: 'Lexend'),
+      theme: ThemeData(
+        fontFamily: GoogleFonts.poppins().fontFamily,
+      ),
       getPages: [
         GetPage(name: '/adminSignup', page: () => const AdminSignUp()),
         GetPage(

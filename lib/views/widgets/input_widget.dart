@@ -1,3 +1,4 @@
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bring_the_menu/constants.dart';
@@ -40,8 +41,8 @@ class _InputWidgetState extends State<InputWidget> {
                 Text(
                   widget.title,
                   style: TextStyle(
-                      color: widget.constants.whiteTextColor,
-                      fontWeight: FontWeight.w500,
+                      color: MyTheme.darkBlue,
+                      fontWeight: FontWeight.w700,
                       fontSize: 18),
                 ),
               ],

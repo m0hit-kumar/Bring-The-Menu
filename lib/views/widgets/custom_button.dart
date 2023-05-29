@@ -1,5 +1,6 @@
 import 'package:bring_the_menu/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 
 class CustomButton extends StatelessWidget {
   CustomButton({
@@ -25,7 +26,7 @@ class CustomButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-            color: constants.themeColor,
+            color: MyTheme.darkBlue,
             borderRadius: BorderRadius.circular(10)),
         child: Center(
           child: Text(title,

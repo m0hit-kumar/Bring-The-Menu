@@ -1,0 +1,213 @@
+Here all issues till date with coresponding assignees are listed.
+---
+name:improving the ui with ux 
+about: Create a report to help us improve
+title: ''
+labels: '#10'
+assignees: 'No one assigned'
+
+---
+---
+name:creating a splashscreen for app intro
+about: Create a report to help us improve
+title: ''
+labels: '#11'
+assignees: '@LegendSumeet
+LegendSumeet'
+
+---
+---
+name:updating the readme to set up the project easily
+about: Create a report to help us improve
+title: ''
+labels: '#12'
+assignees: '@fizakhan90
+fizakhan90'
+
+---
+---
+name:Fixing TextEditing controller Issues and other Minor Issues in Complete profile Page
+about: Create a report to help us improve
+title: ''
+labels: '#14'
+assignees: '@ROUNAK-K-JHA-2002
+ROUNAK-K-JHA-2002'
+
+---
+---
+name:Debug mode throwing error on physical devices
+about: Create a report to help us improve
+title: ''
+labels: '#18'
+assignees: 'No one'
+
+---
+---
+name:Adding a sidebar to the app 
+about: Create a report to help us improve
+title: ''
+labels: '#21'
+assignees: 'no one'
+
+---
+---
+name:Add Bottom Navigation Bar[GSSoC'23]
+about: Create a report to help us improve
+title: ''
+labels: '#25'
+assignees: 'no one'
+
+---
+---
+name:Restaurant name and location input fields have the same text controller [GSSoC'23]
+about: Create a report to help us improve
+title: ''
+labels: '#30'
+assignees: '@TikuGaelle
+TikuGaelle'
+
+---
+---
+name:Need a readme section in which all issue with the person assigned is metioned
+about: Create a report to help us improve
+title: ''
+labels: '#31'
+assignees: '@TRISHAHALDER
+TRISHAHALDER
+'
+
+---
+---
+name:Add ContributingGuidelines.md
+about: Create a report to help us improve
+title: ''
+labels: '#32'
+assignees: '@shanvijha30
+shanvijha30'
+
+---
+---
+name:improvement in background
+about: Create a report to help us improve
+title: ''
+labels: '#33'
+assignees: 'No one assigned'
+
+---
+---
+name:Design Get Started page 
+about: Create a report to help us improve
+title: ''
+labels: '#35'
+assignees: 'No one assigned'
+
+---
+---
+name:Design Register Restaurant page
+about: Create a report to help us improve
+title: ''
+labels: '#36'
+assignees: 'no one'
+
+---
+---
+name:Update admin sign up page
+about: Create a report to help us improve
+title: ''
+labels: '#37'
+assignees: 'no one'
+
+---
+---
+name:Redesigning App UI
+about: Task is to revamp the existing user interface of our app. To create a more modern, user-friendly, and visually captivating design that aligns with project's goals and target audience. Consider factors such as color schemes, typography, layout, and overall user experience (UX). Feel free to propose new design elements or suggest improvements to the existing UI.
+title: ''
+labels: '#39'
+assignees: '@yagnik2411
+yagnik2411'
+
+---
+---
+name:Design issue with Login button in AdminSignUp screen.
+about: Create a report to help us improve
+title: ''
+labels: '#40'
+assignees: 'no one'
+
+---
+---
+name:Missing Issue Template in Repository
+about: Create a report to help us improve
+title: ''
+labels: '#41'
+assignees: 'no one'
+
+---
+---
+name:Error messages
+about: The error messages that appear while the user is signing in or logging in is not very user friendly, they are in a very technical language. For example if the click on login without entering any details the error says "Given string is empty or null"
+Also, I feel the placement of the error messages should be at the bottom (like a snack bar) rather than in the center as users are used to such UI
+title: ''
+labels: '#42'
+assignees: 'no one'
+
+---
+---
+name:Redesign and improve UI
+about: Create a report to help us improve
+title: ''
+labels: '#44'
+assignees: 'no one'
+
+---
+
+---
+name:Sign up :Lacking Input Validation
+about: Create a report to help us improve
+title: ''
+labels: '#45'
+assignees: 'no one'
+
+---
+---
+name:Payment received Thank you page
+about: Create a report to help us improve
+title: ''
+labels: '#46'
+assignees: 'no one'
+
+---
+---
+name:Designing new Illustrative UI elements
+about: Create a report to help us improve
+title: ''
+labels: '#47'
+assignees: 'no one'
+
+---
+---
+name:Add Validation in Onboarding Form.
+about: Create a report to help us improve
+title: ''
+labels: '#48'
+assignees: '@coeuskoalemoss
+coeuskoalemoss'
+
+---
+---
+name:Edit Restaurant Details, when clicking Edit Icon in Dashboard Page.
+about: Create a report to help us improve
+title: ''
+labels: '#49'
+assignees: '@Khushal747
+Khushal747'
+
+---
+---
+name:Integrating online payment
+about: Create a report to help us improve
+title: ''
+labels: '#50'
+assignees: 'no one'
+
+---

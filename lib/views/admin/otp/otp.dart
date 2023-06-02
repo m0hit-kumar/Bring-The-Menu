@@ -143,7 +143,7 @@ class _AdminOTPScreenState extends State<AdminOTPScreen> {
                           onTap: canResendEmail ? sendVerificationEmail : null,
                           width: Get.width / 3.2,
                           height: Get.height / 20),
-                    ],
+                    ], // error in this button
                   ),
                 ),
               ),

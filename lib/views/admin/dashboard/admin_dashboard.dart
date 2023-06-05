@@ -35,7 +35,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
         actions: [
           IconButton(
               onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminCompleteProfile()));
+                Get.to(() => const AdminCompleteProfile());
+
               },
               icon: Icon(
                 Icons.edit,

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/views/admin/complete_profile/complete_profile.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -28,7 +29,7 @@ class _AdminOTPScreenState extends State<AdminOTPScreen> {
   @override
   void initState() {
     super.initState();
-    isEmailVerfied = FirebaseAuth.instance.currentUser!.emailVerified;
+    // isEmailVerfied = FirebaseAuth.instance.currentUser!.emailVerified;
 
     if (!isEmailVerfied) {
       sendVerificationEmail();
@@ -91,25 +92,27 @@ class _AdminOTPScreenState extends State<AdminOTPScreen> {
                     children: [
                       SizedBox(height: Get.height / 10),
                       SvgPicture.asset(
-                        'assets/images/foodPlate.svg',
+                        'assets/images/restaurant.svg',
                         width: Get.width / 1.4,
                       ),
                       SizedBox(height: Get.height / 13),
-                      Text(
-                        'Bring The Menu Admin',
+                      const Text(
+                        textAlign: TextAlign.center,
+                        'Bring The Menu',
                         style: TextStyle(
-                            color: constants.whiteTextColor,
+                            color: MyTheme.darkBlue,
                             fontWeight: FontWeight.w600,
-                            fontSize: 30),
+                            fontSize: 30,
+                            fontStyle: FontStyle.normal,
+                            wordSpacing: 0.0),
                       ),
-                      SizedBox(height: Get.height / 30),
+                   
                       Text(
                         'Enter OTP',
-                        style: TextStyle(
-                            color: constants.whiteTextColor, fontSize: 24),
+                         style: TextStyle(color: MyTheme.darkBlue, fontSize: 20),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: Get.height / 20),
+                      SizedBox(height: Get.height / 40),
                       Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: Get.width / 15),
@@ -127,7 +130,7 @@ class _AdminOTPScreenState extends State<AdminOTPScreen> {
                           hintText: 'eg: 2314',
                           controller: otpController,
                           isObscrue: false),
-                      SizedBox(height: Get.height / 20),
+                      SizedBox(height: Get.height / 50),
                       CustomButton(
                           constants: constants,
                           title: 'Verify',
@@ -136,12 +139,12 @@ class _AdminOTPScreenState extends State<AdminOTPScreen> {
                           },
                           width: Get.width / 3.2,
                           height: Get.height / 20),
-                      SizedBox(height: Get.height / 20),
+                      SizedBox(height: Get.height / 70),
                       CustomButton(
                           constants: constants,
                           title: 'Send Verification Mail',
                           onTap: canResendEmail ? sendVerificationEmail : null,
-                          width: Get.width / 3.2,
+                          width: Get.width / 1.5,
                           height: Get.height / 20),
                     ], // error in this button
                   ),

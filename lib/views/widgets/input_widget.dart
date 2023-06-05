@@ -2,6 +2,7 @@ import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bring_the_menu/constants.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class InputWidget extends StatefulWidget {
   InputWidget({
@@ -42,12 +43,12 @@ class _InputWidgetState extends State<InputWidget> {
                   widget.title,
                   style: TextStyle(
                       color: MyTheme.darkBlue,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w400,
                       fontSize: 18),
                 ),
               ],
             ),
-            SizedBox(height: Get.height / 60),
+            SizedBox(height: Get.height / 300),
             Container(
               width: double.infinity,
               height: Get.height / 17,
@@ -62,6 +63,7 @@ class _InputWidgetState extends State<InputWidget> {
                   border: InputBorder.none,
                   hintText: widget.hintText,
                   hintStyle: TextStyle(
+                    fontStyle: context.captionStyle!.fontStyle,
                       color: widget.constants.inputHintTextColor,
                       fontSize: 15,
                       fontWeight: FontWeight.normal),

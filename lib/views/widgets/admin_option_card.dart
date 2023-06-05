@@ -1,4 +1,5 @@
 import 'package:bring_the_menu/constants.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -31,14 +32,17 @@ class AdminOptionCard extends StatelessWidget {
                 color: constants.backgroundColor,
                 borderRadius: BorderRadius.circular(15)),
             child: Center(
-              child: SvgPicture.asset(imagePath),
+              
+              child: SvgPicture.asset(imagePath,width: Get.width / 4.00,
+                height: Get.height / 9,
+              ),
             ),
           ),
           SizedBox(height: Get.height / 120),
           Text(
             title,
-            style: TextStyle(
-                color: constants.whiteTextColor,
+            style:const TextStyle(
+                color: MyTheme.WhiteSmoke,
                 fontSize: 14,
                 fontWeight: FontWeight.bold),
           )

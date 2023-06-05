@@ -1,4 +1,5 @@
 import 'package:bring_the_menu/constants.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:bring_the_menu/views/widgets/admin_option_card.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
@@ -19,7 +20,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
       backgroundColor: constants.backgroundColor,
       appBar: AppBar(
         title: Text(
-          'Bring the menu admin',
+          'Admin Dashboard',
           style: TextStyle(color: constants.whiteTextColor),
         ),
         backgroundColor: constants.backgroundColor,
@@ -74,13 +75,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
                   AdminOptionCard(
                     constants: constants,
                     title: 'Reviews',
-                    imagePath: 'assets/images/reviews.svg',
+                    imagePath: 'assets/images/review1.svg',
                   ),
                   const SizedBox(width: 3),
                   AdminOptionCard(
                     constants: constants,
                     title: 'Customers',
-                    imagePath: 'assets/images/reviews.svg',
+                    imagePath: 'assets/images/customer1.svg',
                   ),
                 ],
               ),
@@ -148,7 +149,7 @@ class OrderCard extends StatelessWidget {
               child: Text(
                 '12',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: MyTheme.darkBlue,
                     fontSize: 22,
                     fontWeight: FontWeight.bold),
               ),
@@ -157,12 +158,12 @@ class OrderCard extends StatelessWidget {
           SizedBox(
             width: Get.width / 1.8,
             height: Get.height / 10,
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'Dish Name, Dish Name, Dish Name, Dish',
-                  style: TextStyle(color: Colors.white, fontSize: 17),
+                  style: TextStyle(color: MyTheme.darkBlue, fontSize: 17),
                 ),
               ],
             ),

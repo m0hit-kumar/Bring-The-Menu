@@ -1,7 +1,11 @@
-import 'package:bring_the_menu/constants.dart';
-import 'package:bring_the_menu/views/widgets/stars.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:bring_the_menu/constants.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
+import 'package:bring_the_menu/views/widgets/stars.dart';
+
+import 'package:velocity_x/velocity_x.dart';
 
 class MenuCard extends StatefulWidget {
   final String dishName;
@@ -62,21 +66,30 @@ class _MenuCardState extends State<MenuCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // width: widget.width,
+      
       decoration: const BoxDecoration(
+        color: MyTheme.WhiteSmoke,
+        border: Border(
+          top: BorderSide(width: 1.0, color:MyTheme.darkBlue),
+          left: BorderSide(width: 1.0, color:MyTheme.darkBlue),
+          right: BorderSide(width: 1.0, color:MyTheme.darkBlue),
+          bottom: BorderSide(width: 1.0, color:MyTheme.darkBlue),
+
+        ),
         borderRadius: BorderRadius.all(
           Radius.circular(16),
+          
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black,
-            blurRadius: 50.0,
-            spreadRadius: 1,
-            offset: Offset(
-              0.2,
-              0.2,
-            ),
+            color: Colors.grey,
+            blurRadius: 7.0,
+            spreadRadius: 1.0,
+            offset: Offset(2.0, 2.0), // shadow direction: bottom right
           )
         ],
+        
       ),
       child: ClipRRect(
         borderRadius: const BorderRadius.all(
@@ -121,9 +134,9 @@ class _MenuCardState extends State<MenuCard> {
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(
-                          height: 15,
-                        ),
+                        // const SizedBox(
+                        //   height: 5,
+                        // ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -135,7 +148,7 @@ class _MenuCardState extends State<MenuCard> {
                                 color: constants.whiteTextColor,
                               ),
                               enableFeedback: true,
-                              onPressed: _decrementQuantity,
+                              onPressed: _quantity==0 ? null : _decrementQuantity,
                             ),
                             Container(
                                 padding: const EdgeInsets.only(

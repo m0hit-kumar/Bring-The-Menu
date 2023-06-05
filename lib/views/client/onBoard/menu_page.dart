@@ -1,6 +1,7 @@
 import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/views/client/onBoard/order_page.dart';
 import 'package:bring_the_menu/views/utility_classes/menu_item.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:bring_the_menu/views/widgets/menu_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +95,7 @@ class _MyMenuState extends State<MyMenu> {
           List<MenuItem> menuItems = MenuItem.fromQuerySnapshot(snapshot);
           if (snapshot.hasData) {
             return Scaffold(
-              backgroundColor: constants.backgroundColor,
+              backgroundColor: MyTheme.LightBlue,
               appBar: AppBar(
                 elevation: 0.0,
                 actions: [
@@ -109,7 +110,8 @@ class _MyMenuState extends State<MyMenu> {
                 title: const Text(
                   // restruant,
                   "Bring The Menu",
-                  style: TextStyle(fontSize: 13),
+                  
+                  style: TextStyle(fontSize: 15, color: MyTheme.darkBlue,fontWeight: FontWeight.bold),
                 ),
                 backgroundColor: Colors.transparent,
                 leading: TextButton(
@@ -161,36 +163,53 @@ class _MyMenuState extends State<MyMenu> {
               ),
               bottomNavigationBar: BottomAppBar(
                 child: Container(
-                  color: constants.menuCardColor,
+                  decoration:BoxDecoration(
+                   color: constants.menuCardColor, 
+                   gradient: LinearGradient(
+                     colors: [MyTheme.MidBlue,MyTheme.LightBlue],
+                     begin: Alignment.bottomCenter,
+                     end: Alignment.topCenter
+                   )
+                  ),
+                  
                   child: Padding(
                     padding: const EdgeInsets.only(
                         top: 15.0, bottom: 15.0, left: 15.0, right: 15.0),
                     child: Container(
                       decoration: const BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black,
-                            blurRadius: 50.0,
-                            spreadRadius: 1,
-                            offset: Offset(
-                              0.2,
-                              0.2,
-                            ),
-                          )
-                        ],
+                        
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //     color: Colors.grey,
+                        //     blurRadius: 5.0,
+                        //     spreadRadius: 0,
+                        //     offset: Offset(
+                        //       0.2,
+                        //       0.2,
+                        //     ),
+                        //   )
+                        // ],
                       ),
                       child: HorizontalSlidableButton(
+                         border: const Border(
+                          top: BorderSide(width: 1.0, color: MyTheme.darkBlue),
+                          left: BorderSide(width: 1.0, color: MyTheme.darkBlue),
+                          right:
+                              BorderSide(width: 1.0, color: MyTheme.darkBlue),
+                          bottom:
+                              BorderSide(width: 1.0, color: MyTheme.darkBlue),
+                        ),
                         width: MediaQuery.of(context).size.width - 30,
                         height: 60.0,
                         buttonWidth: MediaQuery.of(context).size.width / 2,
                         color: constants.menuCardColor,
                         buttonColor: constants.themeColor,
                         dismissible: false,
-                        label: Center(
+                        label: const Center(
                             child: Text(
                           'Order',
                           style: TextStyle(
-                              color: constants.whiteTextColor, fontSize: 22),
+                              color: Colors.white, fontSize: 22),
                         )),
                         child: Align(
                           alignment: Alignment.centerRight,

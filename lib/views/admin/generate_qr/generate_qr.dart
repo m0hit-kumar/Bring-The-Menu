@@ -1,9 +1,11 @@
 import 'package:bring_the_menu/constants.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class GenerateQRCodes extends StatefulWidget {
   const GenerateQRCodes({super.key});
@@ -30,22 +32,27 @@ class _GenerateQRCodesState extends State<GenerateQRCodes> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Bring the menu admin',
-                style: TextStyle(
-                    color: constants.whiteTextColor,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
+              const Center(
+                child: Text(
+                    textAlign: TextAlign.center,
+                  'Bring The Menu',
+                  style: TextStyle(
+                      color: MyTheme.darkBlue,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30,
+                      fontStyle: FontStyle.normal,
+                      wordSpacing: 0.0),
+                ),
               ),
-              SizedBox(height: Get.height / 50),
+              SizedBox(height: Get.height / 70),
               Text(
                 'Total Seats',
                 style: TextStyle(
                     color: constants.whiteTextColor,
-                    fontSize: 28,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500),
-              ),
-              SizedBox(height: Get.height / 30),
+              ).centered(),
+             
               InputWidget(
                   constants: constants,
                   title: '',
@@ -65,7 +72,7 @@ class _GenerateQRCodesState extends State<GenerateQRCodes> {
                           showQrCodes = true;
                         });
                       },
-                      width: Get.width / 4,
+                      width: Get.width / 3,
                       height: Get.height / 20),
                 ],
               ),
@@ -117,10 +124,10 @@ class QRCodeContainer extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Get.width / 15),
       child: Container(
-        width: double.infinity,
+        width: double.maxFinite,
         height: Get.height / 20,
         decoration: BoxDecoration(
-            border: Border.all(color: constants.inputStrokeColor)),
+            border: Border.all(color: Colors.transparent)),
         child: Row(
           children: [
             Container(
@@ -137,7 +144,7 @@ class QRCodeContainer extends StatelessWidget {
               ),
             ),
             Container(
-              width: Get.width / 1.831,
+              width: Get.width/1.9,
               height: Get.height / 20,
               decoration: BoxDecoration(
                   border: Border.all(color: constants.inputStrokeColor)),
@@ -154,7 +161,7 @@ class QRCodeContainer extends StatelessWidget {
                   child: Text(
                     downloadText,
                     style: TextStyle(
-                        color: constants.whiteTextColor, fontSize: 18),
+                        color: MyTheme.darkBlue, fontSize: 18),
                   ),
                 ),
               ),

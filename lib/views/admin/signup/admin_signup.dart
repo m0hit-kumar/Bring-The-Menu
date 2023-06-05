@@ -48,7 +48,7 @@ class _AdminSignUpState extends State<AdminSignUp> {
                           children: [
                             SizedBox(height: Get.height / 10),
                             SvgPicture.asset(
-                              'assets/images/foodPlate.svg',
+                              'assets/images/restaurant.svg',
                               width: Get.width / 1.4,
                             ),
                             SizedBox(height: Get.height / 30),

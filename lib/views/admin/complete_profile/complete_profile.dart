@@ -1,11 +1,13 @@
 import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/controller/database_controller.dart';
 import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
+import 'package:bring_the_menu/views/utility_classes/mytheme.dart';
 import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class AdminCompleteProfile extends StatefulWidget {
   const AdminCompleteProfile({super.key});
@@ -37,7 +39,21 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
       return const AdminDashboard();
     } else {
       return Scaffold(
-        backgroundColor: constants.backgroundColor,
+        backgroundColor: MyTheme.LightBlue,
+        
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: MyTheme.WhiteSmoke,
+           title:Text(
+            'Complete Profile',
+           
+            style: TextStyle(
+              color: MyTheme.darkBlue,
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+            ),
+          ).centered(),
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(
@@ -47,23 +63,20 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Bring the menu admin',
-                  style: TextStyle(
-                      color: constants.whiteTextColor,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: Get.height / 50),
-                Text(
-                  'Complete Profile',
-                  style: TextStyle(
-                      color: constants.whiteTextColor,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w500),
-                ),
+                
+                // SizedBox(height: Get.height / 20),
+                // Text(
+                //   'Complete Profile',
+                  
+                //   style: TextStyle(
+                //       color:MyTheme.darkBlue,
+                //       fontSize: 32,
+                //       fontWeight: FontWeight.bold,
+                      
+                //       ),
+                // ),
 
-                SizedBox(height: Get.height / 13),
+                SizedBox(height: Get.height / 20),
 
                 InputWidget(
                     constants: constants,
@@ -102,11 +115,11 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                         Text(
                           'Website',
                           style: TextStyle(
-                              color: constants.whiteTextColor,
+                              color: MyTheme.darkBlue,
                               fontWeight: FontWeight.w500,
                               fontSize: 18),
                         ),
-                        SizedBox(height: Get.height / 60),
+                        SizedBox(height: Get.height / 300),
                         Container(
                           width: Get.width / 3.05,
                           height: Get.height / 17,
@@ -156,11 +169,11 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                               Text(
                                 'Open Time',
                                 style: TextStyle(
-                                    color: constants.whiteTextColor,
+                                    color:MyTheme.darkBlue,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 18),
                               ),
-                              SizedBox(height: Get.height / 60),
+                              SizedBox(height: Get.height / 300),
                               InkWell(
                                 onTap: () async {
                                   final TimeOfDay? newTime =
@@ -201,11 +214,11 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                               Text(
                                 'Close Time',
                                 style: TextStyle(
-                                    color: constants.whiteTextColor,
+                                    color: MyTheme.darkBlue,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 18),
                               ),
-                              SizedBox(height: Get.height / 60),
+                              SizedBox(height: Get.height / 300),
                               InkWell(
                                 onTap: () async {
                                   final TimeOfDay? newTime =
@@ -244,7 +257,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                       ),
                     )),
 
-                SizedBox(height: Get.height / 30),
+                SizedBox(height: Get.height / 50),
 
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: Get.width / 11),

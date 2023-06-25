@@ -154,6 +154,7 @@ class OrderCard extends StatelessWidget {
               ),
             ),
           ),
+          //here expanded is used to take the remaining space to stop width overflow
           Expanded(
             child: SizedBox(
               width: Get.width / 1.8,

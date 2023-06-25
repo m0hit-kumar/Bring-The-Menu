@@ -45,7 +45,7 @@ You can contribute to Bring the Menu in any or all of the following ways:
 - [Suggest ways to improve the developer experience of an existing feature](https://github.com/m0hit-kumar/Bring-The-Menu/issues/new/choose)
 - [Request a new feature](https://github.com/m0hit-kumar/Bring-The-Menu/issues/new/choose)
 - Add documentation
-- To add a new feature, resolve an existing issue or add a new test to the project, check out our [Contribution Guidelines]("Add contibuting.md filename here").  
+- To add a new feature, resolve an existing issue or add a new test to the project, check out our [Contribution Guidelines](https://github.com/m0hit-kumar/Bring-The-Menu/blob/main/CONTRIBUTING.md).  
 
 
 

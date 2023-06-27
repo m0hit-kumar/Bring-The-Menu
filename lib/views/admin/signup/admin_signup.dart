@@ -89,19 +89,20 @@ class _AdminSignUpState extends State<AdminSignUp> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomButton(
-                                      constants: constants,
-                                      title: 'Sign Up',
-                                      onTap: () {
-                                        final username =
-                                            emailController.text.trim();
-                                        final password =
-                                            passwordController.text.trim();
+                                    constants: constants,
+                                    title: 'Sign Up',
+                                    onTap: () {
+                                      final username =
+                                          emailController.text.trim();
+                                      final password =
+                                          passwordController.text.trim();
 
-                                        authManager.createUser(
-                                            username, password);
-                                      },
-                                      width: Get.width / 3.2,
-                                      height: Get.height / 20),
+                                      authManager.createUser(
+                                          username, password);
+                                    },
+                                    width: Get.width / 3.2,
+                                    height: Get.height / 20,
+                                  ),
                                   InkWell(
                                     onTap: () {
                                       final username =

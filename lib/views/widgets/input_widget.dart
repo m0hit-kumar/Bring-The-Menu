@@ -11,6 +11,7 @@ class InputWidget extends StatefulWidget {
     required this.controller,
     required this.isObscrue,
     this.keyboardType,
+    this.validator,
   }) : super(key: key);
 
   final Constants constants;
@@ -18,7 +19,10 @@ class InputWidget extends StatefulWidget {
   String hintText;
   TextEditingController controller;
   final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
   bool isObscrue;
+
+  
 
   @override
   State<InputWidget> createState() => _InputWidgetState();

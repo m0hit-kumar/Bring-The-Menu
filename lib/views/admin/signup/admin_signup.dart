@@ -8,6 +8,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
 
+import '../../../controller/database_controller.dart';
+
 class AdminSignUp extends StatefulWidget {
   const AdminSignUp({super.key});
 
@@ -20,6 +22,8 @@ class _AdminSignUpState extends State<AdminSignUp> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final authManager = Get.put(AuthManager());
+  final databaseController = Get.put(DatabaseController()); // Add this line
+
 
   var errorCode;
 

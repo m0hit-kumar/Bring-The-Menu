@@ -154,17 +154,20 @@ class OrderCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            width: Get.width / 1.8,
-            height: Get.height / 10,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'Dish Name, Dish Name, Dish Name, Dish',
-                  style: TextStyle(color: Colors.white, fontSize: 17),
-                ),
-              ],
+          //here expanded is used to take the remaining space to stop width overflow
+          Expanded(
+            child: SizedBox(
+              width: Get.width / 1.8,
+              height: Get.height / 10,
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dish Name, Dish Name, Dish Name, Dish',
+                    style: TextStyle(color: Colors.white, fontSize: 17),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(

@@ -1,3 +1,21 @@
+
+# Bring-The-Menu
+Bring the Menu is an extensive Restaurant Management System which believes in providing a seamless dining experience to both customers and restaurant owners by providing them with suitable facilities. It aims to increase customer satisfaction and improve restaurant operations through its efficient and user-friendly features.
+
+## Getting Started
+### Technology Stack
+- Flutter
+- Firebase
+### Setup
+- Fork the repository
+- Clone the forked repository in terminal using:<br>
+ 
+  ``git clone https://github.com/<your-username>/Bring-The-Menu.git ``
+  
+- Run the project
+### Getting started with Flutter
+A few resources to get you started if this is your first Flutter project:
+
 # Bring_The_Menu 🍽️
 
 
@@ -9,6 +27,7 @@ Bring the menu is an innovative project where We're all about making the dining 
 ---
 Imagine this: you walk into a restaurant, scan a code at your table, and boom! The entire menu is at your fingertips. No more waiting for servers or flipping through bulky menus. With Bring the Menu, you can effortlessly browse dishes, place orders, and even settle your bill, all from the convenience of your smartphone.<br>
 So whether you're a restaurant owner aiming for smoother operations or a foodie seeking a hassle-free dining adventure, come join us on this exciting journey as we revolutionize the way we dine out. 
+
 
 --- 
 
@@ -76,4 +95,19 @@ You can contribute to Bring the Menu in any or all of the following ways:
 | Restaurant Profile Complete | Review Page-1 | Review |
 | --------------------------- | ------------- | ------ |
 | ![Restaurant Profile Complete](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4e347a0f-63a0-427c-9413-063e8b47e347) | ![Review Page-1](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/f6d7b763-33bb-489e-a8f9-001016bdfa40) | ![Review](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/bce2f94c-a2a3-4aff-9970-99ac333b4d15) |
+
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+
+## Guide to Contribution
+Intrested in contributing to this project? Here are a few steps to get you started!
+- Setup the project if you haven't done already by forking and cloning the forked repository
+- Next find an issue that you are interested in and open that issue on github and get it assigned
+- Make all the required changes and commit them
+- Create a pull request and wait for it to be merged
+- Congratulations you just made your first contribution!
+
+
 

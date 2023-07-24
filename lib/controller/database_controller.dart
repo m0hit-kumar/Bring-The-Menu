@@ -31,7 +31,7 @@ class DatabaseController extends GetxController {
       },
       "upi": "9876543210@upi",
       "type": "veg",
-      "loc": restaurantlocation,
+      "loc": const GeoPoint(30.2829736, 76.7105632),
       "images":
           "https://lh5.googleusercontent.com/g69fW72YegaMsGMEa-qIxrRskVXhSIM3UfEP4xqit6T2aVBQSbA0zcQsl40MftwvPw2rac37x2SX_7pt06h9t7SXZB_i81qpCJIgsKo_gn74jMBj65QxY7ZbCsIda90o14dFyS2g"
     };

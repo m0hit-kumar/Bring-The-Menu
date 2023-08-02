@@ -1,8 +1,23 @@
 # Bring_The_Menu 🍽️
 
-
-### Please support the project by giving it a Star ⭐️
-
+<div id="top"></div>
+<div align="center">
+<img src="https://forthebadge.com/images/badges/built-by-developers.svg" />
+<img src="https://forthebadge.com/images/badges/uses-brains.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
+ <br>
+   <img src="https://img.shields.io/github/repo-size/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-closed-raw/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  
+  <img src="https://img.shields.io/github/forks/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-pr/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-pr-closed-raw/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  <img src="https://img.shields.io/github/contributors/m0hit-kumar/Bring-The-Menu?style=for-the-badge" />
+  </div>
+  <br>
+  
 Bring the menu is an innovative project where We're all about making the dining experience a breeze for both restaurants and customers. 
 
 ### Project Description 
@@ -77,3 +92,4 @@ You can contribute to Bring the Menu in any or all of the following ways:
 | --------------------------- | ------------- | ------ |
 | ![Restaurant Profile Complete](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4e347a0f-63a0-427c-9413-063e8b47e347) | ![Review Page-1](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/f6d7b763-33bb-489e-a8f9-001016bdfa40) | ![Review](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/bce2f94c-a2a3-4aff-9970-99ac333b4d15) |
 
+### Please support the project by giving it a Star ⭐️

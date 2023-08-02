@@ -20,6 +20,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
   final constants = Get.put(Constants());
   final db = Get.put(DatabaseController());
   TextEditingController restaurantNameController = TextEditingController();
+  TextEditingController locationNameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController websiteController = TextEditingController();
   TextEditingController upiController = TextEditingController();
@@ -91,7 +92,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                     constants: constants,
                     title: 'Location',
                     hintText: 'Fetching.....',
-                    controller: restaurantNameController,
+                    controller: locationNameController,
                     isObscrue: false),
 
                 SizedBox(height: Get.height / 30),
@@ -103,6 +104,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                     SizedBox(
                       width: Get.width / 1.95,
                       child: InputWidget(
+                          textInputType: TextInputType.phone,
                           constants: constants,
                           title: 'Phone',
                           hintText: 'eg: 8813900000',

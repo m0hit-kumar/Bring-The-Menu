@@ -4,16 +4,18 @@ import 'package:get/get.dart';
 import 'package:bring_the_menu/constants.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class InputWidget extends StatefulWidget {
-  InputWidget({
-    Key? key,
-    required this.constants,
-    required this.title,
-    required this.hintText,
-    required this.controller,
-    required this.isObscrue,
-    this.keyboardType,
-  }) : super(key: key);
+class InputWidget extends StatelessWidget {
+  InputWidget(
+      {Key? key,
+      required this.constants,
+      required this.title,
+      required this.hintText,
+      required this.controller,
+      this.textInputType,
+      required this.isObscrue})
+      : super(key: key);
+
+
 
   final Constants constants;
   String title;
@@ -21,6 +23,7 @@ class InputWidget extends StatefulWidget {
   TextEditingController controller;
   final TextInputType? keyboardType;
   bool isObscrue;
+  TextInputType? textInputType;
 
   @override
   State<InputWidget> createState() => _InputWidgetState();
@@ -57,8 +60,12 @@ class _InputWidgetState extends State<InputWidget> {
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: widget.constants.inputStrokeColor)),
               child: TextFormField(
-                controller: widget.controller,
+
+                controller: controller,
+                keyboardType: textInputType ?? TextInputType.text,
+
                 obscureText: isPassword ? widget.isObscrue : false,
+
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: widget.hintText,

@@ -3,7 +3,7 @@
 import 'package:bring_the_menu/views/admin/generate_qr/generate_qr.dart';
 
 import 'package:bring_the_menu/views/admin/dashboard/about_page.dart';
-
+import 'package:is_first_run/is_first_run.dart';
 import 'package:universal_html/html.dart' as html;
 
 import 'package:bring_the_menu/views/admin/dashboard/admin_dashboard.dart';
@@ -18,6 +18,8 @@ import 'package:bring_the_menu/views/admin/signup/admin_signup.dart';
 import 'package:bring_the_menu/views/client/onBoard/onboard.dart';
 import 'package:get/get.dart';
 import 'package:bring_the_menu/views/admin/complete_profile/complete_profile.dart';
+
+import 'introslider/introslider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,13 +37,21 @@ class MyApp extends StatefulWidget {
 
   @override
   State<MyApp> createState() => _MyAppState();
+
 }
 
 class _MyAppState extends State<MyApp> {
+
   String documentId = "";
+  bool isfirstrun = false;
+
+  Future<void> isFirstRun() async {
+    isfirstrun = await IsFirstRun.isFirstRun();
+  }
   @override
   void initState() {
     super.initState();
+    isFirstRun();
     _extractDocumentIdFromUrl();
   }
 
@@ -59,9 +69,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/adminSignup',
+      initialRoute: isfirstrun?'/OnBoardingPage':'/adminSignup',
       theme: ThemeData(fontFamily: 'Lexend'),
       getPages: [
+        GetPage(name: '/OnBoardingPage', page:() => const OnBoardingPage()),
         GetPage(name: '/adminSignup', page: () => const AdminSignUp()),
         GetPage(
             name: '/adminCompleteProfile',

@@ -12,7 +12,7 @@ class DatabaseController extends GetxController {
       FirebaseFirestore.instance.collection('restaurants');
   Future<void> createProfile(
       String restaurantName,
-      String restaurantlocation,
+      GeoPoint restaurantlocation,
       String phone,
       String website,
       String upiController,
@@ -31,7 +31,7 @@ class DatabaseController extends GetxController {
       },
       "upi": "9876543210@upi",
       "type": "veg",
-      "loc": const GeoPoint(30.2829736, 76.7105632),
+      "loc":restaurantlocation==""? const GeoPoint(30.2829736, 76.7105632):restaurantlocation,
       "images":
           "https://lh5.googleusercontent.com/g69fW72YegaMsGMEa-qIxrRskVXhSIM3UfEP4xqit6T2aVBQSbA0zcQsl40MftwvPw2rac37x2SX_7pt06h9t7SXZB_i81qpCJIgsKo_gn74jMBj65QxY7ZbCsIda90o14dFyS2g"
     };

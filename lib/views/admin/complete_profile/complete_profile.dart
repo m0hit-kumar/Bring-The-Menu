@@ -5,6 +5,8 @@ import 'package:bring_the_menu/views/widgets/custom_button.dart';
 import 'package:bring_the_menu/views/widgets/input_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 class AdminCompleteProfile extends StatefulWidget {
@@ -18,19 +20,76 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
   final constants = Get.put(Constants());
   final db = Get.put(DatabaseController());
   TextEditingController restaurantNameController = TextEditingController();
-   TextEditingController restaurantLocationController = TextEditingController();
+  TextEditingController restaurantLocationController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController websiteController = TextEditingController();
   TextEditingController upiController = TextEditingController();
 
   RxString openTime = 'Select Time'.obs;
   RxString closeTime = 'Select Time'.obs;
+GeoPoint? _currentPoint;
+
+  //handling the location permission
+  Future<bool> _handleLocationPermission() async {
+    LocationPermission permission;
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied.');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error('Location permissions are permanently denied.');
+    }
+
+    return true;
+  }
+
+  //getting the pincode from the current location
+  Future<void> getPincode(Position position)async{
+    await placemarkFromCoordinates(position.latitude, position.longitude)
+          .then((List<Placemark> placemarks) async {
+        Placemark place = placemarks[0];
+        String pin = place.postalCode.toString();
+        setState(() {
+          restaurantLocationController.text = pin;
+        });
+      }, onError: (e) {
+        print(e);
+      });
+  }
+
+  //getting the current location using GPS with geoLocator
+  Future<void> getCurrentPosition() async {
+    final hasPermission = await _handleLocationPermission();
+
+    if (!hasPermission) return;
+    await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
+        .then((Position position) async {
+      setState(() {
+        _currentPoint = GeoPoint(position.latitude, position.longitude);
+      });
+      await getPincode(position);
+    }).catchError((e) {
+      debugPrint(e);
+    });
+  }
 
   Future<DocumentSnapshot<Map<String, dynamic>>> menuRef = FirebaseFirestore
       .instance
       .collection('restaurants')
       .doc("SqNrahYI1KhQaVZXzkcN")
       .get();
+
+  @override
+  void initState(){
+    // TODO: implement initState
+    super.initState();
+     getCurrentPosition();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +136,9 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
 
                 InputWidget(
                     constants: constants,
-                    title: 'Location',
+                    title: 'Location Pincode',
                     hintText: 'Fetching.....',
-                      controller: restaurantLocationController,
+                    controller: restaurantLocationController,
                     isObscrue: false),
 
                 SizedBox(height: Get.height / 30),
@@ -260,7 +319,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                             try {
                               db.createProfile(
                                   restaurantNameController.text,
-                                    restaurantLocationController.text,
+                                  _currentPoint!,
                                   phoneController.text,
                                   websiteController.text,
                                   upiController.text,
@@ -269,7 +328,6 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
                             } catch (e) {
                               print(e);
                             }
-                            ;
                           },
                           width: Get.width / 4,
                           height: Get.height / 18),

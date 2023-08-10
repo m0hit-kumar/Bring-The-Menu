@@ -20,7 +20,10 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
   final constants = Get.put(Constants());
   final db = Get.put(DatabaseController());
   TextEditingController restaurantNameController = TextEditingController();
+
   TextEditingController restaurantLocationController = TextEditingController();
+
+
   TextEditingController phoneController = TextEditingController();
   TextEditingController websiteController = TextEditingController();
   TextEditingController upiController = TextEditingController();
@@ -155,6 +158,7 @@ GeoPoint? _currentPoint;
                     title: 'Location Pincode',
                     hintText: 'Fetching.....',
                     controller: restaurantLocationController,
+
                     isObscrue: false),
 
                 SizedBox(height: Get.height / 30),
@@ -166,6 +170,7 @@ GeoPoint? _currentPoint;
                     SizedBox(
                       width: Get.width / 1.95,
                       child: InputWidget(
+                          textInputType: TextInputType.phone,
                           constants: constants,
                           title: 'Phone',
                           hintText: 'eg: 8813900000',

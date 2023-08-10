@@ -91,6 +91,22 @@ GeoPoint? _currentPoint;
      getCurrentPosition();
   }
 
+@override
+  void dispose() {
+    // Dispose of controllers
+    restaurantNameController.dispose();
+    restaurantLocationController.dispose();
+    phoneController.dispose();
+    websiteController.dispose();
+    upiController.dispose();
+
+    // Dispose of RxString
+    openTime.close();
+    closeTime.close();
+    _currentPoint = null;
+
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     if (db.profileAvailable == true) {

@@ -92,4 +92,19 @@ You can contribute to Bring the Menu in any or all of the following ways:
 | --------------------------- | ------------- | ------ |
 | ![Restaurant Profile Complete](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/4e347a0f-63a0-427c-9413-063e8b47e347) | ![Review Page-1](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/f6d7b763-33bb-489e-a8f9-001016bdfa40) | ![Review](https://github.com/m0hit-kumar/Bring-The-Menu/assets/60257288/bce2f94c-a2a3-4aff-9970-99ac333b4d15) |
 
+<h2>Project Contributors🫂</h2>
+
+<a href="https://github.com/m0hit-kumar/Bring-The-Menu/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=m0hit-kumar/Bring-The-Menu" />
+</a>
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<h2>Contributing is fun🧡</h2>
+
+
+
+
+
+
 ### Please support the project by giving it a Star ⭐️

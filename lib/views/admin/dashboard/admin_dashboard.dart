@@ -2,6 +2,7 @@ import 'package:bring_the_menu/constants.dart';
 import 'package:bring_the_menu/views/widgets/admin_option_card.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
+import '../complete_profile/complete_profile.dart';
 import 'package:get/get.dart';
 
 class AdminDashboard extends StatefulWidget {
@@ -32,7 +33,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
             )),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => const AdminCompleteProfile());
+                },
               icon: Icon(
                 Icons.edit,
                 color: constants.whiteTextColor,

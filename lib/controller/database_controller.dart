@@ -9,6 +9,7 @@ class DatabaseController extends GetxController {
 
   final _auth = FirebaseAuth.instance;
   final _db = FirebaseFirestore.instance;
+  FirebaseAuth get auth => _auth;
 
   CollectionReference users =
       FirebaseFirestore.instance.collection('restaurants');
@@ -31,7 +32,7 @@ class DatabaseController extends GetxController {
         "openTime": openTime == "" ? "8:00 am" : openTime,
         "closeTime": closeTime == "" ? "8:00 pm" : closeTime
       },
-      "upi": "9876543210@upi",
+      "upi":upiController=="" ? "9876543210@upi" : upiController,
       "type": "veg",
       "loc":restaurantlocation==""? const GeoPoint(30.2829736, 76.7105632):restaurantlocation,
       "images":

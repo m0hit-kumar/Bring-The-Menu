@@ -17,6 +17,7 @@ class AdminCompleteProfile extends StatefulWidget {
 }
 
 class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
+  final DatabaseController _dbController = Get.find();
   final constants = Get.put(Constants());
   final db = Get.put(DatabaseController());
   TextEditingController restaurantNameController = TextEditingController();
@@ -27,6 +28,7 @@ class _AdminCompleteProfileState extends State<AdminCompleteProfile> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController websiteController = TextEditingController();
   TextEditingController upiController = TextEditingController();
+  TextEditingController locationController = TextEditingController();
 
   RxString openTime = 'Select Time'.obs;
   RxString closeTime = 'Select Time'.obs;
@@ -94,6 +96,33 @@ GeoPoint? _currentPoint;
      getCurrentPosition();
   }
 
+  @override
+  void initState() {
+    super.initState();
+
+    fetchRestaurantData();
+  }
+
+  Future<void> fetchRestaurantData() async {
+    final user = _dbController.auth.currentUser?.uid;
+    final snapshot = await FirebaseFirestore.instance
+        .collection('restaurants')
+        .doc(user)
+        .get();
+
+    if (snapshot.exists) {
+      final data = snapshot.data() as Map<String, dynamic>;
+
+      restaurantNameController.text = data['name'] ?? '';
+        // locationController.text = data['location'] ?? '';
+      phoneController.text = data['contact'] ?? '';
+      websiteController.text = data['website'] ?? '';
+       upiController.text = data['upi'] ?? '';
+      openTime.value = data['timming']['openTime'] ?? 'Select Time';
+      closeTime.value = data['timming']['closeTime'] ?? 'Select Time';
+    }
+  }
+
 @override
   void dispose() {
     // Dispose of controllers
@@ -110,6 +139,7 @@ GeoPoint? _currentPoint;
 
     super.dispose();
   }
+  
   @override
   Widget build(BuildContext context) {
     if (db.profileAvailable == true) {
@@ -157,7 +187,7 @@ GeoPoint? _currentPoint;
                     constants: constants,
                     title: 'Location Pincode',
                     hintText: 'Fetching.....',
-                    controller: restaurantLocationController,
+                    controller: locationController,
 
                     isObscrue: false),
 
